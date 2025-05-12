@@ -1,0 +1,82 @@
+position = "top"
+
+anchor_to_edges = true
+height = 0
+
+[[start]]
+type = "music"
+
+[[center]]
+type = "custom"
+name = "screen-control"
+
+[[center.bar]] # Brightness
+type = "box"
+name = "brightness"
+orientation = "horizontal"
+
+[[center.bar.widgets]]
+type = "label"
+label = "󱩏 "
+
+[[center.bar.widgets]]
+type = "slider"
+name = "brightness"
+show_label = false
+length = 128
+# quadratic scale
+on_change = """!
+brightnessctl set $(
+    echo $0 | awk -F: '{
+        gain = 120000
+        print gain * ($i / 100) ^ 2
+    }'
+)
+"""
+value = """300:
+brightnessctl get | awk -v order=1.1 -F: '{
+    gain = 120000
+    print 100 * sqrt($i / gain)
+}'
+"""
+
+[[center.bar]] # Gamma
+type = "box"
+name = "temperature"
+orientation = "horizontal"
+
+[[center.bar.widgets]]
+type = "label"
+label = " "
+
+[[center.bar.widgets]]
+type = "slider"
+show_label = false
+length = 128
+on_change = "!hyprctl hyprsunset gamma $0%"
+value = "300:hyprctl hyprsunset gamma"
+
+
+[[center.bar]] # temperature
+type = "box"
+name = "frequency"
+orientation = "horizontal"
+
+[[center.bar.widgets]]
+type = "label"
+label = "󰥛 "
+
+[[center.bar.widgets]]
+type = "slider"
+min = 1000
+max = 6000
+show_label = false
+length = 128
+on_change = "!hyprctl hyprsunset temperature $0"
+value = "300:hyprctl hyprsunset temperature"
+
+[[end]]
+type = "upower"
+
+[[end]]
+type = "clock"

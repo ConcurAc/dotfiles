@@ -1,0 +1,31 @@
+backend = "full"
+color_space = "lch"
+palette = "dark16"
+check_contrast = true
+
+[templates]
+# template: A relative path that points to a file where wallust.toml is located, usually at `~/.config/wallust/`
+# target: Absolute path in which to place a file with generated templated values
+# NOTE: prefer '' over "" for paths, avoids escaping.
+
+# terminals ignored as init script should fetch color sequence from the cache
+alacritty.template = 'alacritty.toml'
+alacritty.target = '~/.config/alacritty/colors.toml'
+
+ghostty.template = 'ghostty'
+ghostty.target = '~/.config/ghostty/colors'
+
+hyprland.template = 'hyprland.conf'
+hyprland.target = '~/.config/hypr/colors.conf'
+
+yazi.template = 'yazi.toml'
+yazi.target = '~/.config/yazi/theme.toml'
+
+clipse.template = 'clipse.json'
+clipse.target = '~/.config/clipse/wallust.json'
+
+anyrun.template = 'gtk.css'
+anyrun.target = '~/.config/anyrun/colors.css'
+
+ironbar.template = 'gtk.css'
+ironbar.target = '~/.config/ironbar/colors.css'

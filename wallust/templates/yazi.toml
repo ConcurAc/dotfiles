@@ -1,0 +1,148 @@
+# : Manager
+
+[manager]
+cwd = { fg = "{{color6}}" }
+
+# Hovered
+hovered = { reversed = true }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword = { fg = "{{color5}}", bold = true, italic = true, underline = true }
+find_position = { fg = "{{color4}}", bg = "reset", bold = true, italic = true }
+
+# Marker
+marker_copied = { fg = "{{color10}}", bg = "{{color10}}" }
+marker_cut = { fg = "{{color9}}", bg = "{{color9}}" }
+marker_marked = { fg = "{{color13}}", bg = "{{color13}}" }
+marker_selected = { fg = "{{color11}}", bg = "{{color11}}" }
+
+# Tab
+tab_active = { reversed = true }
+tab_inactive = {}
+tab_width = 1
+
+# Count
+count_copied = { fg = "{{color7}}", bg = "{{color10}}" }
+count_cut = { fg = "{{color7}}", bg = "{{color9}}" }
+count_selected = { fg = "{{color7}}", bg = "{{color11}}" }
+
+# Border
+border_symbol = "│"
+border_style = { fg = "{{color1}}" }
+
+
+# : Mode
+
+[mode]
+
+normal_main = { fg = "{{color9}}", bg = "{{color14}}", bold = true }
+normal_alt = { fg = "{{color14}}", bg = "{{color9}}" }
+
+# Select mode
+select_main = { fg = "{{color14}}", bg = "{{color10}}", bold = true }
+select_alt = { fg = "{{color9}}", bg = "{{color14}}" }
+
+# Unset mode
+unset_main = { fg = "{{color14}}", bg = "{{color9}}", bold = true }
+unset_alt = { fg = "{{color9}}", bg = "{{color14}}" }
+
+
+# : Status bar
+
+[status]
+separator_open = ""
+separator_close = ""
+
+# Progress
+progress_label = { fg = "{{foreground}}", bold = true }
+progress_normal = { fg = "{{color1}}", bg = "{{color14}}" }
+progress_error = { fg = "{{color6}}", bg = "{{color9}}" }
+
+# Permissions
+perm_sep = { fg = "{{color6}}" }
+perm_type = { fg = "{{color4}}" }
+perm_read = { fg = "{{color2}}" }
+perm_write = { fg = "{{color3}}" }
+perm_exec = { fg = "{{color1}}" }
+
+
+# : Pick
+
+[pick]
+border = { fg = "{{color6}}" }
+active = { fg = "{{color7}}", bold = true }
+inactive = {}
+
+
+# : Input
+
+[input]
+border = { fg = "{{color6}}" }
+title = {}
+value = {}
+selected = { reversed = true }
+
+
+# : Completion
+
+[completion]
+border = { fg = "{{color6}}" }
+
+
+# : Tasks
+
+[tasks]
+border = { fg = "{{color6}}" }
+title = {}
+hovered = { fg = "{{color7}}", underline = true }
+
+
+# : Which
+
+[which]
+mask = { bg = "{{color9}}" }
+cand = { fg = "{{color14}}", bold = true }
+rest = { fg = "{{color0}}" }
+desc = { fg = "{{color14}}" }
+separator = "  "
+separator_style = { fg = "{{color7}}" }
+
+
+# : Help
+
+[help]
+on = { fg = "{{color9}}", bold = true }
+run = { fg = "{{color6}}" }
+hovered = { reversed = true, bold = true }
+footer = { fg = "{{color6}}", bg = "{{color9}}" }
+
+
+# : Notify
+
+[notify]
+title_info = { fg = "{{color10}}" }
+title_warn = { fg = "{{color11}}" }
+title_error = { fg = "{{color9}}" }
+
+
+# : File-specific styles
+
+[filetype]
+rules = [
+    # Images
+    { mime = "image/*", fg = "{{color1}}" },
+
+    # Media
+    { mime = "{audio,video}/*", fg = "{{color2}}" },
+
+    # Archives
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "{{color3}}" },
+
+    # Documents
+    { mime = "application/{pdf,doc,rtf}", fg = "{{color12}}" },
+
+    # Fallback
+    { name = "*", fg = "{{color15}}" },
+    { name = "*/", fg = "{{color14}}" },
+]

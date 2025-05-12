@@ -1,0 +1,78 @@
+@import url("colors.css");
+
+@define-color bg alpha(@color0, 0.8);
+@define-color bg-darker alpha(@background, 0.8);
+
+@define-color bg-interactive @color14;
+@define-color bg-hover @color6;
+@define-color bg-focus @color14;
+
+@define-color bg-selected alpha(@color6, 0.5);
+@define-color bg-active @color12;
+@define-color bg-inactive alpha(@background, 0.5);
+
+@define-color border @color14;
+
+@define-color text @color15;
+
+* {
+    font-family: monospace;
+
+    border-style: none;
+    border-width: 2px;
+    border-radius: 12px;
+    border-color: @border;
+
+    outline: none;
+
+    background: none;
+
+    color: @text;
+}
+
+scale {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+trough {
+    background: @bg-inactive;
+}
+
+trough highlight {
+    background: @bg-active;
+}
+
+slider {
+    padding: 0px;
+    border-style: solid;
+    border-color: @bg-interactive;
+    background: radial-gradient(@bg, @bg-interactive);
+}
+
+.popup,
+#bar {
+    padding: 2px;
+
+    border-style: solid;
+
+    background-color: @bg;
+}
+
+.widget,
+#center {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#start {
+    margin-left: 1rem;
+}
+
+#end {
+    margin-right: 1rem;
+}
+
+.custom {
+    font-size: 1.2rem;
+}
