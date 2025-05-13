@@ -1,15 +1,14 @@
 [manager]
 ratio = [2, 4, 3]
 
-[opener]
-extract = [
-    { run = 'ouch d -y "%*"', desc = "Extract with ouch", for = "windows" },
-    { run = 'ouch d -y "$@"', desc = "ExtractO with ouch", for = "unix" },
-]
-
 [plugin]
 prepend_previewers = [
-    { name = "*.md", run = "glow" },
+    { name = "*.csv", run = "rich-preview" },   # for csv files
+    { name = "*.md", run = "rich-preview" },    # for markdown (.md) files
+    { name = "*.rst", run = "rich-preview" },   # for restructured text (.rst) files
+    { name = "*.ipynb", run = "rich-preview" }, # for jupyter notebooks (.ipynb)
+    { name = "*.json", run = "rich-preview" },  # for json (.json) files
+    #    { name = "*.lang_type", run = "rich-preview"} # for particular language files eg. .py, .go., .lua, etc.
     # Archive previewer
     { mime = "application/*zip", run = "ouch" },
     { mime = "application/x-tar", run = "ouch" },
